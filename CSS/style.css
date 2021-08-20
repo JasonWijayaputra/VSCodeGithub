@@ -342,3 +342,179 @@
     U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
     U+FEFF, U+FFFD;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Noto Sans", sans-serif;
+}
+
+section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.header {
+  margin: 40px 0;
+}
+
+.h1 {
+  text-align: center;
+  color: #04aa6d;
+  font-size: 32px;
+}
+
+.h5 {
+  text-align: center;
+  font-size: 18px;
+}
+
+.sectionstyle {
+  padding: 80px 0px;
+  width: 100%;
+  background-color: #282a35;
+  color: white;
+  margin: 16px 0;
+}
+
+.div {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+
+.divh1 {
+  font-size: 100px;
+}
+
+.divh5 {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.a {
+  border: none;
+  padding: 8px 16px;
+  overflow: hidden;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  background-color: #04aa6d;
+  color: white;
+  font-size: 18px;
+  margin: auto;
+  display: block;
+  width: 200px;
+  border-radius: 25px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.a2 {
+  border: none;
+  padding: 8px 16px;
+  overflow: hidden;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  background-color: white;
+  color: black;
+  font-size: 18px;
+  margin: auto;
+  display: block;
+  width: 200px;
+  border-radius: 25px;
+  font-weight: 700;
+}
+
+.div2 {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+
+.img {
+  width: 450px;
+}
+
+.section2 {
+  padding: 80px 0px;
+  width: 100%;
+  background-color: #d9eee1;
+  color: black;
+  margin: 16px 0;
+}
+
+.img2 {
+  width: 450px;
+}
+
+.div3 {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+
+.div4 {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+
+.h1kedua {
+  font-size: 100px;
+}
+
+.h5kedua {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.adiv4 {
+  border: none;
+  padding: 8px 16px;
+  overflow: hidden;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  background-color: #04aa6d;
+  color: white;
+  font-size: 18px;
+  margin: auto;
+  display: block;
+  width: 200px;
+  border-radius: 25px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.a2div4 {
+  border: none;
+  padding: 8px 16px;
+  overflow: hidden;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  margin: auto;
+  display: block;
+  width: 200px;
+  border-radius: 25px;
+  font-weight: 700;
+}
+
+.footer {
+  text-align: center;
+  background-color: #282a35;
+  color: white;
+  padding: 40px 0;
+}

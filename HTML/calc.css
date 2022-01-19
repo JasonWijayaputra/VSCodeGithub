@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(#e91e63, #ffc107);
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#f8e004, #f85d03);
+  clip-path: circle(25% at 25% 10%);
+}
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#f8e004, #f85d03);
+  clip-path: circle(25% at 75% 90%);
+}
+.container {
+  position: relative;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 10;
+  backdrop-filter: blur(15px);
+  border: 3px solid rgba(7, 23, 247, 0.2);
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.2);
+}
+.container .Calculator {
+  position: relative;
+  display: grid;
+}
+.container .Calculator .value {
+  grid-column: span 4;
+  height: 140px;
+  width: 300px;
+  text-align: right;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 35px;
+  background: transparent;
+  color: white;
+  border-bottom: 3px solid rgba(255, 255, 255, 0.05);
+  border-right: 3px solid rgba(255, 255, 255, 0.05);
+}
+.container .Calculator span {
+  display: grid;
+  height: 75px;
+  width: 75px;
+  place-items: center;
+  color: #fff;
+  font-weight: 400;
+  cursor: pointer;
+  font-size: 20px;
+  user-select: none;
+  border-top: 3px solid rgba(255, 255, 255, 0.05);
+  border-left: 3px solid rgba(255, 255, 255, 0.05);
+  transition: 0.5s;
+}
+.container .Calculator span:hover {
+  transition: 0s;
+  background: rgba(255, 255, 255, 0.05);
+}
+.container .Calculator span:active {
+  background: #def702;
+  color: #192f00;
+  font-size: 24px;
+  font-weight: 500;
+}
+.container .Calculator .clear {
+  grid-column: span 2;
+  width: 150px;
+  background: rgba(255, 255, 255, 0.05);
+}
+.container .Calculator .plus {
+  grid-row: span 2;
+  height: 150px;
+}
+.equal {
+  background: rgba(255, 255, 255, 0.05);
+}

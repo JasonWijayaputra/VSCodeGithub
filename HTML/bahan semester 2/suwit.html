@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suwit Jawa</title>
+    <style>
+      
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* Suwit Jawa 2.0 */
+
+body {
+    background-image: url(bg.png);
+    font-family: arial;
+}
+h1 {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+    margin-top: 30px;
+    text-transform: uppercase;
+    color: #e7e7e7;
+    text-shadow: 1.5px 1.5px 0 #333, 0px 1.5px 0 #333, -1.5px -1.5px 0 #333, -1.5px -1.5px 0 #333, -1.5px 1.5px 0 #333, 1.5px -1.5px 0 #333, 0.7778174593px 0.7778174593px 0 #aaaaaa, 1.5556349186px 1.5556349186px 0 #aaaaaa, 2.3334523779px 2.3334523779px 0 #aaaaaa, 3.1112698372px 3.1112698372px 0 #aaaaaa, 3.8890872965px 3.8890872965px 0 #aaaaaa, 4.6669047558px 4.6669047558px 0 #aaaaaa, 5.4447222151px 5.4447222151px 0 #aaaaaa, 6.2225396744px 6.2225396744px 0 #aaaaaa, 7.0003571337px 7.0003571337px 0 #aaaaaa, 7.7781745931px 7.7781745931px 0 #aaaaaa;
+}
+
+.container {
+    width: 600px;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+}
+
+.area-komputer {
+    width: 560px;
+    height: 250px;
+    margin: 5px auto;
+    background-color: lightblue;
+    background: linear-gradient(to bottom, rgba(179,220,237,1) 0%, rgb(229, 110, 41) 100%);
+    position: relative;
+    padding-top: 40px;
+    box-sizing: border-box;
+    border-radius: 40px 40px 0 0;
+}
+
+.area-player {
+    width: 560px;
+    height: 250px;
+    margin: 5px auto;
+    background-color: lightgreen;
+    background: linear-gradient(to bottom, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+    position: relative;
+    border-radius: 0 0 40px 40px;
+}
+
+.info {
+    width: 150px;
+    height: 60px;
+    border: 5px solid salmon;
+    position: absolute;
+    left: 50%;
+    margin-left: -75px;
+    top: 50%;
+    margin-top: -30px;
+    background-color: white;
+    border-radius: 30px;
+    z-index: 1;
+    text-align: center;
+    line-height: 60px;
+    color: #f89bb4;
+    font-size: 26px;
+    text-shadow: 1px 1px 1px rgba(0,0,0,.3);
+}
+
+ul {
+    padding-top: 80px;
+    padding-left: 25px;
+}
+
+li {
+    display: inline-block;
+    margin: 0 18px;
+}
+
+img {
+    width: 130px;
+    height: 130px;
+    display: block;
+    margin: auto;
+    border-radius: 50%;
+}
+
+.gajah, .orang, .semut {
+    transition: .3s;
+    position: relative;
+    top:0;
+    cursor: pointer;
+}
+
+.gajah:hover, .semut:hover, .orang:hover, .active {
+    box-shadow: 0 0 10px 5px limegreen;
+}
+
+.gajah:active, .semut:active, .orang:active {
+    top: 2px;
+}
+.skorplayer, .skorcomp{
+    font-size: 30px;
+}
+
+    </style>
+</head>
+<body>
+    <h1>DOM Bermain Suwit</h1>
+       <div class="container">
+        <div class="area-komputer">
+            <div class="skorcomp">0</div>
+            <img src="gajah.png" class="img-komputer">
+           
+        </div>
+        <div class="info"></div>
+        <div class="area-player">
+            <div class="skorplayer">0</div>
+            <ul>
+                <li>
+                    <img src="gajah.png" class="gajah">
+                </li>
+                <li>
+                    <img src="orang.png" class="orang">
+                </li>
+                <li>
+                    <img src="semut.png" class="semut">
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+       function getpilihanComputer() {
+        let comp = Math.random();
+            if (comp < 0.34) return 'gajah';
+            if (comp >=0.34 && comp < 0.67) return 'orang';
+            return 'semut';
+       }
+    function getHasil(comp, player){
+        let hasil = '';
+        if(player == comp) return "Draw!";
+        if(player == 'gajah') return (comp == 'orang')? 'Win!':'Lose!';
+        if(player == 'orang') return (comp == 'gajah')? 'Lose!':'Win!'
+        if(player == 'semut') return (comp == 'orang')? 'Lose!':'Win!';
+    }
+    function roll(){
+        const imgComputer = document.querySelector('.img-komputer');
+        const gambar = ['gajah', 'semut', 'orang'];
+        let i = 0;
+        const starttime = new Date().getTime();
+        setInterval(function(){
+            if(new Date().getTime() - starttime > 1000){
+                clearInterval;
+                return;
+            }
+                imgComputer.setAttribute('src',  gambar[i++] + '.png')
+                if(i == gambar.length) i = 0;
+
+                
+        }, 50);
+    }
+    
+    const pilihan = document.querySelectorAll('li img');
+    let win = 0;
+    let lose = 0;
+    pilihan.forEach(function(pil){
+        pil.addEventListener('click', function(){
+        const pilihanComputer = getpilihanComputer();
+        const pilihanPlayer = pil.className;
+        const hasil = getHasil(pilihanComputer, pilihanPlayer);
+            roll();
+            setTimeout(function(){
+                const imgComputer = document.querySelector('.img-komputer');
+                imgComputer.setAttribute('src',  pilihanComputer + '.png');
+
+                const info = document.querySelector('.info');
+                info.innerHTML = hasil;
+                const skorcomp = document.querySelector('.skorcomp');
+                const skorplayer = document.querySelector('.skorplayer');
+                if(hasil == 'Win!'){
+                    skorplayer.innerHTML = ++win;
+                }
+                if(hasil == "Lose!"){
+                    skorcomp.innerHTML = ++lose;
+                }
+                if(win === 10){
+                    alert("Player win!");
+                }else if(lose === 10){
+                    alert("Computer win!");
+                }
+            }, 1000);
+            
+        });
+    });
+//     const pilihan = document.querySelectorAll('.dua ul li img');
+// let win = 1;
+// let lose = 1;
+// pilihan.forEach(function(pil){
+	
+// 	pil.addEventListener('click', function(){		const pilihanComputer = getPilihanComputer();
+// 		const pilihanPlayer = pil.className;
+// 		const hasil = getHasil(pilihanComputer,pilihanPlayer);
+		
+// 		putar();
+// 		setTimeout(function(){
+// 			const gambarComputer = document.querySelector('.gambarComputer');
+// 			gambarComputer.setAttribute('src', 'gambar/'+pilihanComputer+'.png');
+// 			const info = document.querySelector('.info');
+// 			info.innerHTML = hasil;
+// 			const skorComp = document.querySelector('.skorComp');
+// 			const skorPlayer = document.querySelector('.skorPlayer');
+// 			if(hasil == 'MENANG!'){
+// 				skorPlayer.innerHTML = win++;
+// 			}
+// 			if(hasil == 'KALAH!'){
+// 				skorComp.innerHTML = lose++;	
+// 			}
+// 		},1000);
+// 		sPlayer.innerHTML = pPlayer;
+    // const pGajah = document.querySelector('.gajah');
+    // pGajah.addEventListener('click', function(){
+    //     const pilihanComputer = getpilihanComputer();
+    //     const pilihanPlayer = pGajah.className;
+    //     const hasil = getHasil(pilihanComputer, pilihanPlayer);
+
+    //     const imgComputer = document.querySelector('.img-komputer');
+    //     imgComputer.setAttribute('src', 'img/'+ pilihanComputer + '.png');
+
+    //     const info = document.querySelector('.info');
+    //     info.innerHTML = hasil;
+
+    // });
+    // const pOrang = document.querySelector('.orang');
+    // pOrang.addEventListener('click', function(){
+    //     const pilihanComputer = getpilihanComputer();
+    //     const pilihanPlayer = pOrang.className;
+    //     const hasil = getHasil(pilihanComputer, pilihanPlayer);
+
+    //     const imgComputer = document.querySelector('.img-komputer');
+    //     imgComputer.setAttribute('src', 'img/'+ pilihanComputer + '.png');
+
+    //     const info = document.querySelector('.info');
+    //     info.innerHTML = hasil;
+
+    // });
+    // const pSemut = document.querySelector('.semut');
+    // pSemut.addEventListener('click', function(){
+    //     const pilihanComputer = getpilihanComputer();
+    //     const pilihanPlayer = pSemut.className;
+    //     const hasil = getHasil(pilihanComputer, pilihanPlayer);
+
+    //     const imgComputer = document.querySelector('.img-komputer');
+    //     imgComputer.setAttribute('src', 'img/'+ pilihanComputer + '.png');
+
+    //     const info = document.querySelector('.info');
+    //     info.innerHTML = hasil;
+
+    // });
+           
+        
+    </script>
+</body>
+</html>

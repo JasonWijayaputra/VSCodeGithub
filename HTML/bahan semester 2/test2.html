@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        } */
+        .container{
+            max-width: 750px;
+            margin: auto;
+        }
+              
+        .tkj{
+            background-color: rgb(116, 209, 240);
+            border-style: solid;
+            border-width: 2px 0 0 0;
+            border-color: blue;
+            padding: 10px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .ak{
+            background-color: red;
+            border-style: solid;
+            border-width: 2px 0 0 0;
+            border-color: rgb(247, 114, 5);
+            padding: 10px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .pm{
+            background-color: orange;
+            border-style: solid;
+            border-width: 2px 0 0 0;
+            border-color: rgba(214, 101, 9, 0.87);
+            padding: 10px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+        .tkj span{
+            position: absolute;
+        }
+        .close{
+            position: absolute;
+            top: 8px;
+            right: 16px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        .close:hover{
+            background-color: cyan;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>SMK Kristen Immanuel Pontianak</h1>
+    
+    <div class="tkj">
+        <h4>TKJ</h4>
+        <p>Jurusan ini kamu akan mempelajari bagaimana kamu menggunakan teknologi komputer 
+            secara optimal guna menangani masalah transformasi atau pengolahan data dengan 
+            proses logika</p>
+        <span class="close">[x]</span>
+    </div>
+    
+    
+    <div class="ak">
+        <h4>AK</h4>
+        <p>Jurusan ini mempelajari materi terkait metode pencatatan dan penyusunan laporan 
+            keuangan yang berguna membantu pemangku kepentingan dalam proses pengambilan
+             keputusan</p>
+        <span class="close">[x]</span>
+    </div>
+ 
+    
+    <div class="pm">
+        <h4>PM</h4>
+        <p>Jurusan ini kamu akan mempelajari bagaimana melakukan pemasaran produk, 
+            pembukuan dan pengelolaan keuangan serta hal-hal terkait keberlanjutan dari suatu 
+            usaha</p>
+        <span class="close">[x]</span>
+    </div>
+    
+    </div>
+    <script>
+    const close = document.querySelectorAll('.close');
+       close.forEach(function(el){
+        el.addEventListener('click', function(e){
+            e.target.parentElement.style.display = 'none';
+            e.preventDefault();
+        });
+    });
+
+
+    </script>
+</body>
+</html>

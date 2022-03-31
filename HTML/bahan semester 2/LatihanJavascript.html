@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan DDG</title>
+</head>
+<body>
+    <input type="button" id="hider" value="Click to hide the text"/>
+    <div id="text">text</div>
+       <script>
+           
+        const button = document.querySelector('#hider');
+        button.addEventListener('click', function(){
+            alert("Hello");
+            })
+        const button1 = document.querySelector('#hider');
+        button1.addEventListener('click', function(e){
+            e.target.style.display = 'none';
+            
+        })
+        // const button4 = document.querySelector('#hider');
+        // button4.addEventListener('click', function(e){
+        //     const teks = document.querySelector('#text');
+        //     teks.style.display = 'none';
+            
+        // })
+        const button2 = document.querySelector('#hider');
+            button2.addEventListener('click', function(){
+            const p = document.createElement('p');
+            const text = document.createTextNode('Jason Wijayaputra');
+            p.appendChild(text);
+            document.body.appendChild(p);
+
+            })
+        const button3 = document.querySelector('#hider');
+            button3.addEventListener('click', function(){
+            const teks = document.querySelector('#text');
+            const h1 = document.createElement('h1');
+            teks.innerHTML = 'Saya Bisa!';
+            h1.appendChild(teks);
+            document.body.appendChild(h1);
+        })
+        // const text = document.querySelector('#hider2');
+        // text.innerHTML = 'Jason Wijayaputra';
+        // const text = document.querySelector('#text')
+        // text = document.createTextNode = '<h1>Saya Bisa</h1>';
+    </script>
+</body>
+</html>

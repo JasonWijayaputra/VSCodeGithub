@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Traversal</title>
+   <style>
+       body {
+    margin: 50px;
+    font-family: arial;
+    background-color: rgb(22, 20, 22);
+}
+
+.container {
+    width: 900px;
+    margin: auto;
+}
+
+.card {
+    display: inline-block;
+    width: 220px;
+    padding: 0 80px;
+    height: 80px;
+    font-size: 16px;
+    line-height: 80px;
+    border-radius: 40px;
+    background-color: #f1f1f1;
+    margin: 20px;
+    position: relative;
+    text-align: center;
+}
+
+.card img {
+    float: left;
+    margin: 0 10px 0 -80px;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.card .nama, .card .telp {
+    display: block;
+    line-height: 20px;
+    padding: 0 5px;
+
+}
+.card a{
+    text-decoration: none;
+}
+.card .nama {
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.card .telp {
+    margin-left: 20px;
+    margin-top: 5px;
+    font-size: 16px;
+    color: #aaa;
+}
+
+.card .close {
+    font-size: 24px;
+    font-weight: bold;
+    color: #999;
+    position: absolute;
+    top: 0;
+    right: 30px;
+    cursor: pointer;
+}
+
+.card:hover .close {
+    color: red;
+}
+
+   </style>
+</head>
+<body>
+
+<div class="container">
+
+    
+    <div class="card">
+        <img src="img1.png" width="96" height="96">
+        <span class="nama">???</span>
+        <span class="telp">08123456789</span>
+        <a href="" class="close">x</a>
+      </div> 
+    <div class="card">
+        <img src="img1.png" width="96" height="96">
+        <span class="nama">Tes</span>
+        <span class="telp">08123456789</span>
+        <a href="" class="close">x</a>
+      </div> 
+      <div class="card">
+        <img src="img3.png" width="96" height="96">
+        <span class="nama">Hacker</span>
+        <span class="telp">08123456789</span>
+        <a href="" class="close">x</a>
+      </div> 
+      <div class="card">
+        <img src="img3.png" width="96" height="96">
+        <span class="nama">Anonymous</span>
+        <span class="telp">08123456789</span>
+        <a href="" class="close">x</a>
+      </div> 
+     
+
+</div>
+
+<script>
+    // const close = document.querySelectorAll('.close');
+    // const card = document.querySelectorAll('.card');
+    // close.addEventListener('click', function(){
+    //     card.style.display = 'none';
+    // });
+    const close = document.querySelectorAll('.close');
+  
+    // for(let i = 0; i<close.length; i++){
+    //     close[i].addEvenetListener('click', function(e){
+    //     //   close[i].parentElement.style.display = 'none';
+    //         e.target.parentElement.style.display = 'none';
+    //     });
+
+    // }
+    close.forEach(function(el){
+        el.addEventListener('click', function(e){
+            e.target.parentElement.style.display = 'none';
+            e.preventDefault();
+        });
+    });
+
+    // const nama = document.querySelector('.nama');
+    // console.log(nama.nextElementSibling.nextElementSibling);
+    // console.log(nama.previousElementSibling);
+    // console.log(nama.nextElementSibling);
+    // console.log(nama.nextElementSibling.previousElementSibling);
+    // console.log(nama.parentElement.parentElement);
+</script>
+</body>
+</html>
